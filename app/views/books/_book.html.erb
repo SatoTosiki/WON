@@ -1,0 +1,18 @@
+<article class="book-card" id="<%= dom_id book %>">
+  <div class="book-card__heading">
+    <p class="eyebrow">BOOK</p>
+    <h3><%= link_to book.title, book, class: "book-card__title" %></h3>
+    <p class="book-card__author">by <%= book.author %></p>
+  </div>
+  <dl class="book-meta">
+    <div>
+      <dt>Pages</dt>
+      <dd><%= book.page_count.presence || "Not set" %></dd>
+    </div>
+    <div>
+      <dt>Published</dt>
+      <dd><%= book.published_on ? l(book.published_on, format: :long) : "Not set" %></dd>
+    </div>
+  </dl>
+  <%= link_to "View details", book, class: "text-link" %>
+</article>

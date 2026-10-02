@@ -1,0 +1,21 @@
+<% content_for :title, "Editing book" %>
+
+<section class="page-shell page-shell--narrow">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <%= link_to "Bookshelf", books_path %>
+    <span aria-hidden="true">/</span>
+    <%= link_to @book.title, @book %>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Edit</span>
+  </nav>
+
+  <header class="page-heading">
+    <p class="eyebrow">UPDATE YOUR COLLECTION</p>
+    <h1>Edit book</h1>
+    <p class="page-intro">Update the details for <%= @book.title %>.</p>
+  </header>
+
+  <div class="form-panel">
+    <%= render "form", book: @book %>
+  </div>
+</section>

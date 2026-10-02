@@ -1,0 +1,19 @@
+<% content_for :title, "New book" %>
+
+<section class="page-shell page-shell--narrow">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <%= link_to "Bookshelf", books_path %>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">New book</span>
+  </nav>
+
+  <header class="page-heading">
+    <p class="eyebrow">ADD TO YOUR COLLECTION</p>
+    <h1>New book</h1>
+    <p class="page-intro">Enter the details you want to keep on record.</p>
+  </header>
+
+  <div class="form-panel">
+    <%= render "form", book: @book %>
+  </div>
+</section>

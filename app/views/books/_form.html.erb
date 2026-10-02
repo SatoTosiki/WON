@@ -1,0 +1,39 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <section class="error-summary" role="alert" aria-labelledby="error-summary-title">
+      <h2 id="error-summary-title"><%= pluralize(book.errors.count, "error") %> prevented this book from being saved</h2>
+      <ul class="error-summary__list">
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <div class="form-grid">
+    <div class="form-field <%= "form-field--invalid" if book.errors[:title].any? %>">
+      <%= form.label :title, "Title", class: "form-label" %>
+      <%= form.text_field :title, required: true, autocomplete: "off", aria: { invalid: book.errors[:title].any? } %>
+    </div>
+
+    <div class="form-field <%= "form-field--invalid" if book.errors[:author].any? %>">
+      <%= form.label :author, "Author", class: "form-label" %>
+      <%= form.text_field :author, required: true, autocomplete: "name", aria: { invalid: book.errors[:author].any? } %>
+    </div>
+
+    <div class="form-field <%= "form-field--invalid" if book.errors[:page_count].any? %>">
+      <%= form.label :page_count, "Page count", class: "form-label" %>
+      <%= form.number_field :page_count, min: 1, step: 1, inputmode: "numeric", aria: { invalid: book.errors[:page_count].any? } %>
+    </div>
+
+    <div class="form-field <%= "form-field--invalid" if book.errors[:published_on].any? %>">
+      <%= form.label :published_on, "Publication date", class: "form-label" %>
+      <%= form.date_field :published_on, aria: { invalid: book.errors[:published_on].any? } %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit(book.persisted? ? "Save changes" : "Add to bookshelf", class: "button button--primary") %>
+    <%= link_to "Cancel", books_path, class: "button button--quiet" %>
+  </div>
+<% end %>

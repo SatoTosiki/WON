@@ -1,0 +1,30 @@
+<% content_for :title, "Books" %>
+
+<section class="page-shell">
+  <header class="library-header">
+    <div>
+      <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+      <h1>Bookshelf</h1>
+      <p class="page-intro">Keep track of the books you own and love.</p>
+    </div>
+    <%= link_to "Add a book", new_book_path, class: "button button--primary" %>
+  </header>
+
+  <div class="collection-heading">
+    <h2>Your collection</h2>
+    <p><%= pluralize(@books.size, "book") %></p>
+  </div>
+
+  <% if @books.any? %>
+    <div class="book-grid" id="books">
+      <%= render @books %>
+    </div>
+  <% else %>
+    <section class="empty-state" aria-labelledby="empty-title">
+      <span class="empty-state__mark" aria-hidden="true">+</span>
+      <h2 id="empty-title">Your bookshelf is ready</h2>
+      <p>Add your first book to start building your collection.</p>
+      <%= link_to "Add your first book", new_book_path, class: "button button--secondary" %>
+    </section>
+  <% end %>
+</section>

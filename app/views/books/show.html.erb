@@ -1,0 +1,24 @@
+<% content_for :title, @book.title %>
+
+<section class="page-shell page-shell--narrow">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <%= link_to "Bookshelf", books_path %>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page"><%= @book.title %></span>
+  </nav>
+
+  <header class="page-heading">
+    <p class="eyebrow">BOOK DETAILS</p>
+    <h1><%= @book.title %></h1>
+    <p class="page-intro">by <%= @book.author %></p>
+  </header>
+
+  <div class="detail-panel">
+    <%= render @book %>
+    <div class="form-actions">
+      <%= link_to "Edit book", edit_book_path(@book), class: "button button--primary" %>
+      <%= link_to "Back to bookshelf", books_path, class: "button button--quiet" %>
+      <%= button_to "Remove book", @book, method: :delete, class: "button button--danger", form: { data: { turbo_confirm: "Remove this book from your bookshelf?" } } %>
+    </div>
+  </div>
+</section>

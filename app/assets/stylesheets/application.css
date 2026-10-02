@@ -1,0 +1,454 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+:root {
+	color-scheme: light;
+	--ink: #202b27;
+	--muted: #66736c;
+	--paper: #f4f3ed;
+	--surface: #fffefa;
+	--line: #d9ddd4;
+	--green: #176b56;
+	--green-dark: #105441;
+	--coral: #bc563f;
+	--danger-bg: #fff0ec;
+	--danger-ink: #8e3023;
+	--shadow: 0 12px 32px rgb(32 43 39 / 7%);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	margin: 0;
+	color: var(--ink);
+	background-color: var(--paper);
+	background-image: linear-gradient(90deg, rgb(23 107 86 / 3%) 1px, transparent 1px);
+	background-size: 36px 100%;
+	font-family: "Avenir Next", "Noto Sans JP", "Yu Gothic", sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+a {
+	color: var(--green);
+	text-underline-offset: 0.18em;
+}
+
+a:hover {
+	color: var(--green-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+	outline: 3px solid #d07a54;
+	outline-offset: 3px;
+}
+
+.page-shell {
+	width: min(100% - 48px, 1080px);
+	margin: 0 auto;
+	padding: 56px 0 88px;
+}
+
+.page-shell--narrow {
+	width: min(100% - 40px, 760px);
+}
+
+.library-header,
+.collection-heading,
+.form-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.library-header {
+	align-items: flex-end;
+	padding: 0 0 32px;
+	border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+	margin: 0 0 10px;
+	color: var(--green);
+	font-size: 0.72rem;
+	font-weight: 750;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1,
+.book-card__title {
+	font-family: "Iowan Old Style", "Palatino Linotype", "Yu Mincho", serif;
+}
+
+h1 {
+	margin-bottom: 8px;
+	font-size: 2.5rem;
+	font-weight: 600;
+	line-height: 1.15;
+}
+
+.page-intro {
+	margin: 0;
+	color: var(--muted);
+}
+
+.collection-heading {
+	margin: 30px 0 16px;
+}
+
+.collection-heading h2 {
+	margin: 0;
+	font-size: 1.15rem;
+}
+
+.collection-heading p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.92rem;
+}
+
+.book-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.book-card,
+.form-panel {
+	border: 1px solid var(--line);
+	border-radius: 7px;
+	background: var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.book-card {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 22px 24px 20px;
+	border-top: 3px solid var(--green);
+}
+
+.book-card .eyebrow {
+	margin-bottom: 6px;
+	color: var(--coral);
+}
+
+.book-card h3 {
+	margin: 0 0 4px;
+	overflow-wrap: anywhere;
+	font-size: 1.35rem;
+	line-height: 1.3;
+}
+
+.book-card__title {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.book-card__title:hover {
+	color: var(--green);
+}
+
+.book-card__author {
+	margin: 0;
+	color: var(--muted);
+}
+
+.book-meta {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin: 20px 0 16px;
+	padding: 14px 0;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+
+.book-meta dt {
+	color: var(--muted);
+	font-size: 0.78rem;
+}
+
+.book-meta dd {
+	margin: 3px 0 0;
+	font-weight: 650;
+	overflow-wrap: anywhere;
+}
+
+.text-link {
+	margin-top: auto;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.empty-state {
+	display: grid;
+	justify-items: center;
+	gap: 10px;
+	padding: 56px 24px;
+	border: 1px dashed #b7c3b8;
+	border-radius: 7px;
+	background: rgb(255 254 250 / 72%);
+	text-align: center;
+}
+
+.empty-state__mark {
+	display: grid;
+	width: 48px;
+	aspect-ratio: 1;
+	place-items: center;
+	border-radius: 50%;
+	color: var(--green-dark);
+	background: #e1eee6;
+	font-size: 1.8rem;
+}
+
+.empty-state h2,
+.empty-state p {
+	margin: 0;
+}
+
+.empty-state p {
+	color: var(--muted);
+}
+
+.button {
+	display: inline-flex;
+	min-height: 44px;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 17px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	font: inherit;
+	font-weight: 700;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+
+.button:hover {
+	transform: translateY(-1px);
+}
+
+.button--primary {
+	color: #fff;
+	background: var(--green);
+}
+
+.button--primary:hover {
+	color: #fff;
+	background: var(--green-dark);
+}
+
+.button--secondary {
+	border-color: var(--green);
+	color: var(--green-dark);
+	background: transparent;
+}
+
+.button--secondary:hover {
+	background: #e8f0e9;
+}
+
+.button--quiet {
+	border-color: var(--line);
+	color: var(--ink);
+	background: transparent;
+}
+
+.button--quiet:hover {
+	background: #f2f3ed;
+}
+
+.button--danger {
+	border-color: #e3b8ae;
+	color: var(--danger-ink);
+	background: var(--danger-bg);
+}
+
+.button--danger:hover {
+	background: #ffe2da;
+}
+
+.breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 9px;
+	margin-bottom: 32px;
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.breadcrumb a {
+	color: var(--green);
+}
+
+.page-heading {
+	margin-bottom: 24px;
+}
+
+.form-panel,
+.detail-panel {
+	padding: 28px;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.form-field {
+	display: grid;
+	align-content: start;
+	gap: 7px;
+}
+
+.form-label {
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.form-field input {
+	width: 100%;
+	min-height: 46px;
+	padding: 10px 12px;
+	border: 1px solid #bfc8bf;
+	border-radius: 4px;
+	color: var(--ink);
+	background: #fff;
+	font: inherit;
+}
+
+.form-field input:hover {
+	border-color: #7c9183;
+}
+
+.form-field--invalid input {
+	border-color: #b64435;
+}
+
+.form-actions {
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-top: 26px;
+}
+
+.form-actions form {
+	margin: 0;
+}
+
+.error-summary {
+	margin-bottom: 22px;
+	padding: 16px 18px;
+	border: 1px solid #e8b6aa;
+	border-left: 4px solid #b64435;
+	border-radius: 4px;
+	color: var(--danger-ink);
+	background: var(--danger-bg);
+}
+
+.error-summary h2 {
+	margin: 0 0 8px;
+	font-size: 1rem;
+}
+
+.error-summary__list {
+	margin: 0;
+	padding-left: 21px;
+}
+
+.flash-region {
+	width: min(100% - 40px, 1080px);
+	margin: 20px auto 0;
+}
+
+.flash-region:empty {
+	display: none;
+}
+
+.flash {
+	padding: 12px 16px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+.flash--success {
+	border-color: #a6c7b1;
+	color: #18563e;
+	background: #e8f3eb;
+}
+
+.flash--error {
+	border-color: #e8b6aa;
+	color: var(--danger-ink);
+	background: var(--danger-bg);
+}
+
+@media (max-width: 640px) {
+	.page-shell,
+	.page-shell--narrow {
+		width: min(100% - 32px, 540px);
+		padding-top: 36px;
+	}
+
+	.library-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.book-grid,
+	.form-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.form-panel,
+	.detail-panel {
+		padding: 20px;
+	}
+
+	.collection-heading {
+		align-items: baseline;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
