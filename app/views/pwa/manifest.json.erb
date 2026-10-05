@@ -1,22 +1,22 @@
 {
-  "name": "Won",
+  "name": "WON Bookshelf",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "<%= image_path("/icon.png") %>",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "/icon.png",
+      "src": "<%= image_path("/icon.png") %>",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
     }
   ],
-  "start_url": "/",
+  "start_url": "<%= root_path %>",
   "display": "standalone",
-  "scope": "/",
-  "description": "Won.",
-  "theme_color": "red",
-  "background_color": "red"
+  "scope": "<%= root_path %>",
+  "description": "A personal library for the books you own and love.",
+  "theme_color": "#176b56",
+  "background_color": "#f4f3ed"
 }

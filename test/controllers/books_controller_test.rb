@@ -10,6 +10,18 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "shared layout provides header sidebar content and footer navigation" do
+    get root_url
+
+    assert_response :success
+    assert_select "#container #header"
+    assert_select "#container #sidebar a[href=?]", root_path
+    assert_select "#container #sidebar a[href=?]", books_path
+    assert_select "#container #sidebar a[href=?]", new_book_path
+    assert_select "#container #content"
+    assert_select "#container #footer"
+  end
+
   test "should get new" do
     get new_book_url
     assert_response :success

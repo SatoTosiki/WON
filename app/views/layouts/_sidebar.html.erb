@@ -1,0 +1,23 @@
+<div class="sidebar-content">
+  <p class="eyebrow">YOUR LIBRARY</p>
+  <nav class="sidebar-nav" aria-label="Bookshelf navigation">
+    <%= link_to root_path, class: "sidebar-link #{'is-active' if current_page?(root_path)}", aria: { current: ("page" if current_page?(root_path)) } do %>
+      <span class="sidebar-link__icon" aria-hidden="true">01</span>
+      <span>Overview</span>
+    <% end %>
+    <%= link_to books_path, class: "sidebar-link #{'is-active' if current_page?(books_path)}", aria: { current: ("page" if current_page?(books_path)) } do %>
+      <span class="sidebar-link__icon" aria-hidden="true">02</span>
+      <span>All books</span>
+    <% end %>
+    <%= link_to new_book_path, class: "sidebar-link #{'is-active' if current_page?(new_book_path)}", aria: { current: ("page" if current_page?(new_book_path)) } do %>
+      <span class="sidebar-link__icon" aria-hidden="true">+</span>
+      <span>Add a book</span>
+    <% end %>
+  </nav>
+
+  <div class="sidebar-note">
+    <span class="sidebar-note__rule" aria-hidden="true"></span>
+    <p class="eyebrow">A NOTE TO SELF</p>
+    <p>Every book you keep is a place you can return to.</p>
+  </div>
+</div>

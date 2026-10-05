@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <%= link_to root_path, class: "brand", aria: { label: "WON Bookshelf home" } do %>
+      <span class="brand__mark" aria-hidden="true">W</span>
+      <span class="brand__name">
+        <strong>WON</strong>
+        <span>BOOKSHELF</span>
+      </span>
+    <% end %>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <%= link_to "Bookshelf", root_path, class: "header-nav__link" %>
+      <%= link_to "Add a book", new_book_path, class: "button button--primary" %>
+    </nav>
+  </div>
+</header>
